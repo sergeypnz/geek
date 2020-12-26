@@ -1,12 +1,11 @@
-a = abs(int(input(" Дружище, введи целое положительное число ")))
-max = a % 10
-while a >= 1:
-    a = a // 10
-    if a % 10 > max:
-        max = a % 10
-    if a > 9:
-        continue
+my_str = input("Введите строку")
+my_world = []
+num = 1
+for el in range(my_str.count(' ') + 1):
+    my_world = my_str.split()
+    if len(str(my_world)) <=  10:
+        print(f" {num} {my_world [el]}")
+        num += 1
     else:
-        print("Максимальная цифра в числе ", max)
-        break
-
+        print(f" {num} {my_world [el] [0:10]}")
+        num += 1

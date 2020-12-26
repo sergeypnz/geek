@@ -1,16 +1,6 @@
-a = 15
-print(a)
-b = a + 10
-print(b)
-c = a + b
-print(c)
-
-name = input("Введите ваше имя: ")
-q = int(input("Введите число, когда вы проверяете мою дз (без года и месяца): "))
-w = int(input("Введите время, во сколько вы проверяете (только час): "))
-print("Теперь отмотай время на 24 часа назад...")
-e = input("И напиши, чем ты занимался в то время: ")
-r = input("Напиши, с кем ты был: ")
-print("Наверняка ведь порол водку и зажигал с женщинами")
-print("Удачи", name)
-
+my_list =  [12, None, -77, 'True', True, 9.5]
+def my_type(el):
+    for el in range(len(my_list)):
+        print(type(my_list[el]))
+        return
+my_type(my_list)
