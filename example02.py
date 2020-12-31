@@ -1,12 +1,10 @@
-el_count = int(input("Введите колличество элементов списка "))
-my_list = []
-i = 0
-el = 0
-while i < el_count:
-    my_list.append(input("Введите следующее значение списка "))
-    i += 1
+name = input('enter name')
+surname = input('enter surname')
+year = int(input('enter year'))
+city = input('enter city')
+email = input('enter email')
+telephone = input('input telephone')
 
-for elem in range(int(len(my_list)/2)):
-    my_list[el], my_list[el + 1] = my_list [el + 1], my_list[el]
-    el += 2
-print(my_list)
+def my_func (name, surname, year, city, email, telephone):
+    return ' '.join([name, surname, year, city, email, telephone])
+print(my_func(surname = 'Moskvin', name = 'Sergey', year = '1991', city = 'Penza', email = 'moskvin@bk.ru', telephone = '8-909-318-60-88'))

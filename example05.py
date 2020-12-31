@@ -1,17 +1,19 @@
-my_list = [7, 5, 3, 3, 2]
-print(f"Рейтинг - {my_list}")
-digit = int(input("Введите число (111 - выход) "))
-while digit != 111:
-    for el in range(len(my_list)):
-        if my_list[el] == digit:
-            my_list.insert(el + 1, digit)
-            break
-        elif my_list[0] < digit:
-            my_list.insert(0, digit)
-        elif my_list[-1] > digit:
-            my_list.append(digit)
-        elif my_list[el] > digit and my_list[el + 1] < digit:
-            my_list.insert(el + 1, digit)
-    print(f"Текущий список - {my_list}")
-    digit = int(input("Введите число"))
+def my_sum ():
+    sum_res = 0
+    ex = False
+    while ex == False:
+        number = input('Input numbers or Q for quit - ').split()
 
+        res = 0
+        for el in range(len(number)):
+            if number[el] == 'q' or number[el] == 'Q':
+                ex = True
+                break
+            else:
+                res = res + int(number[el])
+        sum_res = sum_res + res
+        print(f'Current sum is {sum_res}')
+    print(f'Your final sum is {sum_res}')
+
+
+my_sum()

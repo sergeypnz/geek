@@ -1,16 +1,9 @@
-seasons_list = ['зима', 'весна', 'лето', 'осень']
-seasons_dict = {1 : 'зима', 2 : 'весна', 3 : 'лето', 4 : 'осень' }
-month = int(input("Введите месяц по номеру "))
-if month == 1 or month == 12 or month == 2:
-    print(seasons_dict.get(2))
-    print(seasons_list[0])
-elif month == 3 or month == 4 or month == 5:
-    print(seasons_dict.get(2))
-    print(seasons_list[1])
-elif month == 6 or month == 7 or month == 8:
-    print(seasons_dict.get(4))
-    print(seasons_list[3])
-else:
-    print("Такого месяца нет")
+def my_func(arg1 , arg2, arg3):
+    if arg1 >= arg3 and arg2 >= arg3:
+        return arg1 + arg2
+    elif arg1 > arg2 and arg1 < arg3:
+        return arg1 + arg3
+    else:
+        return arg2 + arg3
 
-
+print(f'Result - {my_func(int(input("enter first argument ")), int(input("enter second argument ")), int(input("enter third argument ")))}')
