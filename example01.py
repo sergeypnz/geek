@@ -1,23 +1,10 @@
-def div (*args):
+strings = []
 
-    try:
-        arg1 = int(input("Input dividend"))
-        arg2 = int(input("Input divider"))
-        res = arg1 / arg2
-    except ValueError:
-        return  'Value error'
-    except ZeroDivisionError:
-        return "Wrong divider! You can't use zero as a devider"
+while True:
+    with open('task01.txt', 'a+') as f:
+        string = input("Введите строку >>> ")
 
-    return res
+        if not string:
+            break
 
-    ...
-
-    if arg2 !=0:
-        return arg1 / arg2
-    else:
-        print("Wrong number! Devider can't be null")
-        ...
-
-    
-    print(f'result {div()}')
+        f.write(f"{string}\n")

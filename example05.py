@@ -1,19 +1,13 @@
-def my_sum ():
-    sum_res = 0
-    ex = False
-    while ex == False:
-        number = input('Input numbers or Q for quit - ').split()
+from random import randrange
 
-        res = 0
-        for el in range(len(number)):
-            if number[el] == 'q' or number[el] == 'Q':
-                ex = True
-                break
-            else:
-                res = res + int(number[el])
-        sum_res = sum_res + res
-        print(f'Current sum is {sum_res}')
-    print(f'Your final sum is {sum_res}')
+random_numbers = [randrange(1, 200) for _ in range(50)]
 
+with open('task05.txt', 'w') as output_data:
+    output_data.write(" ".join(map(str, random_numbers)))
 
-my_sum()
+with open('task05.txt') as input_data:
+    numbers = input_data.read().split()
+
+    print(
+        sum(float(x) for x in numbers)
+    )

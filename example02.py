@@ -1,10 +1,7 @@
-name = input('enter name')
-surname = input('enter surname')
-year = int(input('enter year'))
-city = input('enter city')
-email = input('enter email')
-telephone = input('input telephone')
+with open('task02.txt') as f:
+    rows = f.readlines()
+    expanded_rows = [row.split() for row in rows]
 
-def my_func (name, surname, year, city, email, telephone):
-    return ' '.join([name, surname, year, city, email, telephone])
-print(my_func(surname = 'Moskvin', name = 'Sergey', year = '1991', city = 'Penza', email = 'moskvin@bk.ru', telephone = '8-909-318-60-88'))
+rows_count, words_count = len(rows), sum([len(word_list) for word_list in expanded_rows])
+
+print(f"Всего строк - {rows_count}, всего слов - {words_count}")

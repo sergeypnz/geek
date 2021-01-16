@@ -1,11 +1,16 @@
-my_str = input("Введите строку")
-my_world = []
-num = 1
-for el in range(my_str.count(' ') + 1):
-    my_world = my_str.split()
-    if len(str(my_world)) <=  10:
-        print(f" {num} {my_world [el]}")
-        num += 1
-    else:
-        print(f" {num} {my_world [el] [0:10]}")
-        num += 1
+translations = {
+    "One": "Один",
+    "Two": "Два",
+    "Three": "Три",
+    "Four": "Четыре"
+}
+
+converted_rows = []
+
+with open("task04.txt") as input_data:
+    for row in input_data:
+        name, value = row.split(' - ')
+        converted_rows.append(f"{translations[name]} - {value}")
+
+with open("task04_ru.txt", "w") as output_data:
+    output_data.writelines(converted_rows)
