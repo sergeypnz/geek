@@ -1,7 +1,44 @@
-with open('task02.txt') as f:
-    rows = f.readlines()
-    expanded_rows = [row.split() for row in rows]
+from abc import ABC, abstractmethod
 
-rows_count, words_count = len(rows), sum([len(word_list) for word_list in expanded_rows])
 
-print(f"Всего строк - {rows_count}, всего слов - {words_count}")
+class Clothes(ABC):
+    name: str
+
+    def __init__(self, name: str):
+        self.name = name
+
+    @property
+    @abstractmethod
+    def calculate(self) -> float:
+        pass
+
+
+class Coat(Clothes):
+    _size: float
+
+    def __init__(self, name: str, size: float):
+        super().__init__(name)
+        self._size = size
+
+    @property
+    def calculate(self) -> float:
+        return self._size / 7.5 + 2.5
+
+
+class Suit(Clothes):
+    _height: float
+
+    def __init__(self, name: str, height: float):
+        super().__init__(name)
+        self._height = height
+
+    @property
+    def calculate(self) -> float:
+        return 2 * self._height + 0.3
+
+
+coat = Coat('Пальто', 3)
+print(coat.calculate)
+
+suit = Suit('Костюм', 1.8)
+print(suit.calculate)
